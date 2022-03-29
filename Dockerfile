@@ -1,2 +1,2 @@
-FROM kimsengduong/cyberpanel:latest
-EXPOSE 80 443 8090
+FROM plesk/plesk:latest
+EXPOSE 21 80 443 8880 8443 8447
