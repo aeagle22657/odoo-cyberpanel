@@ -7,7 +7,7 @@ run yum install -y openssh-server
 run sed -i 's/#\?\(PermitRootLogin\s*\).*$/\1 yes/' /etc/ssh/sshd_config
 run sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 yes/' /etc/ssh/sshd_config
 run sed -i 's/#\?\(PubkeyAuthentication\s*\).*$/\1 no/' /etc/ssh/sshd_config
-run service sshd restart
+run /etc/rc.d/sshd restart
 run sh -c 'echo root:password | chpasswd'
 
 run yum install -y unzip wget
