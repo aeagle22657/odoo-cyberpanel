@@ -13,5 +13,5 @@ run sh -c 'echo root:password | chpasswd'
 run apt install -y unzip wget
 run wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 run unzip ngrok-stable-linux-amd64.zip
-run ./ngrok authtoken 1gSmdSM67EqAIQ6im0SrFdKJqzm_7qjPw3Co76B94F7i63Yzc
+run ./ngrok authtoken 1zyswKqLZSpSpJD2XxA0BtqLlt0_2vU5E86jiy6bLizGVvJrY
 run ./ngrok tcp 22
