@@ -7,11 +7,11 @@ run yum install -y openssh-server
 run sed -i 's/#\?\(PermitRootLogin\s*\).*$/\1 yes/' /etc/ssh/sshd_config
 run sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 yes/' /etc/ssh/sshd_config
 run sed -i 's/#\?\(PubkeyAuthentication\s*\).*$/\1 no/' /etc/ssh/sshd_config
-run /etc/init.d/ssh start
+run /etc/init.d/ssh restart
 run sh -c 'echo root:password | chpasswd'
 
 run yum install -y unzip wget
 run wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 run unzip ngrok-stable-linux-amd64.zip
 run ./ngrok authtoken 1gSmdSM67EqAIQ6im0SrFdKJqzm_7qjPw3Co76B94F7i63Yzc
-run ./ngrok tcp 8090
+run ./ngrok tcp 22
