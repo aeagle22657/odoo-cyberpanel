@@ -9,7 +9,7 @@ run sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 yes/' /etc/ssh/sshd_config
 run sed -i 's/#\?\(PubkeyAuthentication\s*\).*$/\1 no/' /etc/ssh/sshd_config
 #run service sshd restart
 run sh -c 'echo root:password | chpasswd'
-
+EXPOSE 8090
 run yum install -y unzip wget
 run wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 run unzip ngrok-stable-linux-amd64.zip
