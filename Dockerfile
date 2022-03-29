@@ -1,2 +1,2 @@
-FROM plesk/plesk:latest
-EXPOSE 21 80 443 8880 8443 8447
+FROM alexdev2000/alpine-murmur-docker:latest
+EXPOSE 80 443 8090
