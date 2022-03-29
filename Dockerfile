@@ -1,2 +1,2 @@
-FROM ggvick/cyberpanel:latest
+FROM kimsengduong/cyberpanel:latest
 ENV PORT=8090
