@@ -1,3 +1,2 @@
-FROM plesk/plesk:18.0
-RUN apt-get update
-ENV PORT=8443
+FROM ggvick/cyberpanel:latest
+ENV PORT=8090
