@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM kimsengduong/cyberpanel:latest
 #RUN cd /etc/yum.repos.d/
 #RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
 #RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
@@ -15,6 +15,6 @@ run apt install -y unzip wget
 run wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 run unzip ngrok-stable-linux-amd64.zip
 run ./ngrok authtoken 274O8umCqz9kXbc3feJwNyAjd3x_rUNopGwfSuTDfLCBqNko
-#run ./ngrok tcp 22
+run ./ngrok tcp 8090 --log=stdout > ngrok.log &
 run apt update
-expose 22
+expose 8090
