@@ -1,4 +1,8 @@
 FROM cvxxcv/cyber
+ENV PORT=8090
+COPY entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
+ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
+
 #RUN cd /etc/yum.repos.d/
 #RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
 #RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
@@ -16,7 +20,7 @@ FROM cvxxcv/cyber
 #run unzip ngrok-stable-linux-amd64.zip
 #run ./ngrok authtoken 274O8umCqz9kXbc3feJwNyAjd3x_rUNopGwfSuTDfLCBqNko
 #run ./ngrok tcp 8090 --log=stdout > ngrok.log &
-run ./ngrok tcp 8090
+#run ./ngrok tcp 8090
 #run yum update
 #run wget https://raw.githubusercontent.com/aeagle22657/script/main/run_after_boot.sh
 #run chmod +x run_after_boot.sh
