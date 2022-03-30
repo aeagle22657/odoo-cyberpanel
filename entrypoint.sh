@@ -1,1 +1,1 @@
-/usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8080
+/usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8090
