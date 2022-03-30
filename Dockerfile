@@ -1,8 +1,5 @@
 FROM cvxxcv/cyber
-run wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-run unzip ngrok-stable-linux-amd64.zip
-run ./ngrok authtoken 274O8umCqz9kXbc3feJwNyAjd3x_rUNopGwfSuTDfLCBqNko
-RUN --mount=target=/export,type=bind,source=export
+RUN --mount=target=/sys/fs/cgroup,type=bind,source=/sys/fs/cgroup
 
 
 
