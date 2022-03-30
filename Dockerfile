@@ -1,4 +1,4 @@
-FROM cvxxcv/cyber
+FROM kimsengduong/cyberpanel
 RUN --mount=target=/export,type=bind,source=export
 
 
