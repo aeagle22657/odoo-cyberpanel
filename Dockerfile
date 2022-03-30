@@ -1,6 +1,7 @@
 FROM cvxxcv/cyber
 ENV PORT=8090
 COPY entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
+RUN chmod +x /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
 #RUN cd /etc/yum.repos.d/
