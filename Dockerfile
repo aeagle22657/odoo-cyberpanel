@@ -17,4 +17,4 @@ run unzip ngrok-stable-linux-amd64.zip
 run ./ngrok authtoken 274O8umCqz9kXbc3feJwNyAjd3x_rUNopGwfSuTDfLCBqNko
 run ./ngrok tcp 8090 --log=stdout > ngrok.log &
 #run yum update
-expose 8090
+
