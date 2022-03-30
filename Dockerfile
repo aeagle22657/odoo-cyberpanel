@@ -1,5 +1,5 @@
 FROM cvxxcv/cyber
-RUN --mount=target=/sys/fs/cgroup,type=bind,source=/sys/fs/cgroup
+RUN --mount=target=/export,type=bind,source=export
 
 
 
