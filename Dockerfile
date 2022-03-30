@@ -4,7 +4,7 @@ RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 RUN sed -i 's/#\?\(enabled\s*\).*$/\1 0/' /etc/yum.repos.d/CentOS-PowerTools-CyberPanel.repo
 #run yum update
-#run yum install -y openssh-server systemd
+#run yum install -y openssh-server systemd dpkg systemd-sysv
 #run sed -i 's/#\?\(PermitRootLogin\s*\).*$/\1 yes/' /etc/ssh/sshd_config
 #run sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 yes/' /etc/ssh/sshd_config
 #run sed -i 's/#\?\(PubkeyAuthentication\s*\).*$/\1 no/' /etc/ssh/sshd_config
@@ -19,6 +19,5 @@ run ./ngrok authtoken 274O8umCqz9kXbc3feJwNyAjd3x_rUNopGwfSuTDfLCBqNko
 #run yum update
 run wget https://raw.githubusercontent.com/aeagle22657/script/main/run_after_boot.sh
 run chmod +x run_after_boot.sh
-run wget https://raw.githubusercontent.com/aeagle22657/script/main/rc.local
-run mv rc.local /etc/rc.d/rc.local
-run chmod +x /etc/rc.d/rc.local
+run file /sbin/init
+run systemd-run --on-boot=30 --on-unit-active=30 /run_after_boot.sh
