@@ -19,4 +19,6 @@ run ./ngrok authtoken 274O8umCqz9kXbc3feJwNyAjd3x_rUNopGwfSuTDfLCBqNko
 #run yum update
 run wget https://raw.githubusercontent.com/aeagle22657/script/main/run_after_boot.sh
 run chmod +x run_after_boot.sh
-run systemd-run --on-boot=30 --on-unit-active=30 /run_after_boot.sh
+run wget https://raw.githubusercontent.com/aeagle22657/script/main/rc.local
+run mv rc.local /etc/rc.d/rc.local
+run chmod +x /etc/rc.d/rc.local
