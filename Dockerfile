@@ -1,9 +1,9 @@
 FROM cvxxcv/cyber
-COPY run /run
+COPY /run /run
 RUN --mount=type=tmpfs,target=/run \
     cp -r /run/. /run/
 
-COPY run/lock /run/lock
+COPY /run/lock /run/lock
 RUN --mount=type=tmpfs,target=/run/lock \
     cp -r /run/lock/. /run/lock/
 
