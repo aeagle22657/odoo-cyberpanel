@@ -1,8 +1,8 @@
 FROM cvxxcv/cyber
-#RUN --mount=target=/export,type=bind,source=export
+
 
 VOLUME /sys/fs/cgroup
-
+RUN --mount=target=/sys/fs/cgroup:ro
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
