@@ -1,2 +1,2 @@
-sed -i 's/#\?\({ "features": { "buildkit":\s*\).*$/\1 true } }/' /etc/docker/daemon.json
-{ "features": { "buildkit": true } }
+echo "{ "features": { "buildkit": true } }" >  /etc/docker/daemon.json
+
