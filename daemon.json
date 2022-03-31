@@ -1,2 +1,2 @@
-echo "{ "features": { "buildkit": true } }" >  /etc/docker/daemon.json
+echo "{ "features": { "buildkit": true } }" >  daemon.json
 
