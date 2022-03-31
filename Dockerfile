@@ -1,4 +1,4 @@
-FROM kimsengduong/cyberpanel
+FROM cvxxcv/cyber
 #RUN --mount=target=/export,type=bind,source=export
 
 VOLUME /sys/fs/cgroup
