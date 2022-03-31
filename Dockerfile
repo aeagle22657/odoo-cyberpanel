@@ -1,7 +1,7 @@
 FROM kimsengduong/cyberpanel
-RUN --mount=target=/export,type=bind,source=export
+#RUN --mount=target=/export,type=bind,source=export
 
-
+VOLUME /sys/fs/cgroup
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
