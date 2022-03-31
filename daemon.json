@@ -1,3 +1,2 @@
-export DOCKER_BUILDKIT=1
-export COMPOSE_DOCKER_CLI_BUILD=1
+sed -i 's/#\?\({ "features": { "buildkit":\s*\).*$/\1 true } }/' /etc/docker/daemon.json
 { "features": { "buildkit": true } }
