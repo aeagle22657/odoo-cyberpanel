@@ -1,2 +1,2 @@
-echo "{ "features": { "buildkit": true } }" >  daemon.json
+{ "features": { "buildkit": true } }
 
