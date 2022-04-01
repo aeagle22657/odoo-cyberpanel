@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.2
 FROM cvxxcv/cyber
 
 RUN --mount=type=tmpfs,target=/run \
