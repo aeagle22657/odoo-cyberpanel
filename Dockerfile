@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1.2
 FROM alekslitvinenk/openvpn
 #RUN --mount=type=tmpfs,target=/run \
-    cp -r /run/. /run/
+#    cp -r /run/. /run/
 
 #RUN --mount=type=tmpfs,target=/run/lock \
-    cp -r /run/lock/. /run/lock/
+#    cp -r /run/lock/. /run/lock/
 
 #VOLUME /sys/fs/cgroup
 #RUN --mount=target=/sys/fs/cgroup:ro
