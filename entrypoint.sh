@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/ngrok tcp 8090
+/ngrok tcp 8080
