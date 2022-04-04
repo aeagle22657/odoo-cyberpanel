@@ -1,17 +1,13 @@
 # syntax=docker/dockerfile:1.2
-FROM cvxxcv/cyber
-
-RUN --mount=type=tmpfs,target=/run \
+FROM alekslitvinenk/openvpn
+#RUN --mount=type=tmpfs,target=/run \
     cp -r /run/. /run/
 
-RUN --mount=type=tmpfs,target=/run/lock \
+#RUN --mount=type=tmpfs,target=/run/lock \
     cp -r /run/lock/. /run/lock/
 
-VOLUME /sys/fs/cgroup
-RUN --mount=target=/sys/fs/cgroup:ro
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+#VOLUME /sys/fs/cgroup
+#RUN --mount=target=/sys/fs/cgroup:ro
 
 #RUN cd /etc/yum.repos.d/
 #RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
@@ -26,9 +22,10 @@ ENTRYPOINT ["/entrypoint.sh"]
 #run sh -c 'echo root:password | chpasswd'
 #run systemctl restart sshd.service
 #run yum install -y unzip wget
-#run wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-#run unzip ngrok-stable-linux-amd64.zip
-#run ./ngrok authtoken 274O8umCqz9kXbc3feJwNyAjd3x_rUNopGwfSuTDfLCBqNko
+run cd /
+run wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+run unzip ngrok-stable-linux-amd64.zip
+run ./ngrok authtoken 274O8umCqz9kXbc3feJwNyAjd3x_rUNopGwfSuTDfLCBqNko
 #run ./ngrok tcp 8090 --log=stdout > ngrok.log &
 #run ./ngrok tcp 8090
 #run yum update
@@ -36,3 +33,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 #run chmod +x run_after_boot.sh
 #run file /sbin/init
 #run systemd-run --on-boot=30 --on-unit-active=30 /run_after_boot.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
